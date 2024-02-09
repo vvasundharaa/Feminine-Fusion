@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS Symptom Selector</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #faeff0; /* Light pink background */
+    color: #4a4a4a; /* Dark gray text */
+}
 
+h1 {
+    text-align: center;
+    color: #ff69b4; /* Hot pink header */
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* White form background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+h2 {
+    color: #ff69b4; /* Hot pink heading */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #ff69b4; /* Hot pink button */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+}
+
+#output-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White container background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+#output {
+    margin-bottom: 20px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>PCOS Symptom Selector</h1>
+    <form id="symptomsForm">
+        <div class="question-container">
+            <div class="question">
+                <h2>Select the PCOS symptoms that you live with.</h2>
+                <label><input type="checkbox" id="Irregular_periods" name="symptom" value="Irregular_periods"> Irregular Periods</label>
+                <label><input type="checkbox" id="Infertility" name="symptom" value="Infertility"> Infertility</label>
+                <label><input type="checkbox" id="Skin_Problems" name="symptom" value="Skin_Problems"> Skin Problems: Acne, Oily Skin</label>
+                <label><input type="checkbox" id="Excessive_Hair_Growth" name="symptom" value="Excessive_Hair_Growth"> Excessive Hair Growth</label>
+                <label><input type="checkbox" id="Depression_Anxiety" name="symptom" value="Depression_Anxiety"> Depression, Anxiety, etc.</label>
+                <label><input type="checkbox" id="None_of_Above" name="symptom" value="None_of_Above"> None of the Above</label>
+                <label><input type="checkbox" id="Other" name="symptom" value="Other"> Other</label>
+            </div>
+            <div class="question">
+                <h2>The PCOS experience is not an easy one. It takes a major toll on our mental health. Pick the responses that are the most relevant to you.</h2>
+                <label><input type="checkbox" id="Depression" name="mental_health" value="Depression"> Depression</label>
+                <label><input type="checkbox" id="Anxiety" name="mental_health" value="Anxiety"> Anxiety</label>
+                <label><input type="checkbox" id="Lonliness" name="mental_health" value="Lonliness"> Loneliness</label>
+                <label><input type="checkbox" id="Shame" name="mental_health" value="Shame"> Shame</label>
+                <label><input type="checkbox" id="Low_Self_Esteem" name="mental_health" value="Low_Self_Esteem"> Low Self-Esteem</label>
+                <label><input type="checkbox" id="Negative_Self_Talk" name="mental_health" value="Negative_Self_Talk"> Negative Self-Talk</label>
+                <label><input type="checkbox" id="Sleep_Deprivation" name="mental_health" value="Sleep_Deprivation"> Sleep Deprivation</label>
+                <label><input type="checkbox" id="None_of_Above_Mental_Health" name="mental_health" value="None_of_Above"> None of the Above</label>
+                <label><input type="checkbox" id="Other_Mental_Health" name="mental_health" value="Other"> Other</label>
+            </div>
+            <div class="question">
+                <h2>Agree or Disagree: I find it rather difficult to manage my PCOS symptoms, no matter what I try.</h2>
+                <label><input type="radio" name="difficulty_management" value="Strongly_Agree"> Strongly Agree</label>
+                <label><input type="radio" name="difficulty_management" value="Somewhat_Agree"> Somewhat Agree</label>
+                <label><input type="radio" name="difficulty_management" value="Agree"> Agree</label>
+                <label><input type="radio" name="difficulty_management" value="Neutral"> Neutral</label>
+                <label><input type="radio" name="difficulty_management" value="Disagree"> Disagree</label>
+                <label><input type="radio" name="difficulty_management" value="Somewhat_Disagree"> Somewhat Disagree</label>
+                <label><input type="radio" name="difficulty_management" value="Strongly_Disagree"> Strongly Disagree</label>
+            </div>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="output-container">
+        <div id="output"></div>
+        <div id="infographic"></div>
+    </div>
+
+    <script src="appointment.js"></script>
+</body>
+</html>

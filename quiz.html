@@ -4,21 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f0f5; /* Light pink background */
+      color: #892a61; /* Dark pink text color */
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff; /* White background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #db166f; /* Dark pink submit button */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #b71257; /* Darker pink on hover */
+    }
+
+    /* Modal Styles */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* Center modal vertically */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Adjust modal width as needed */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    h3 {
+      color:#ac4b84
+    }
+    
+  </style>
 </head>
 <body>
 
-  <h1>Quiz</h1>
 
-  <form action="results.html" method="post">
-    <h3>Question 1: What is the capital of France?</h3>
-    <label><input type="checkbox" name="q1_option1"> Paris</label><br>
-    <label><input type="checkbox" name="q1_option2"> London</label><br>
-    <label><input type="checkbox" name="q1_option3"> Berlin</label><br>
+  <form id="quizForm" action="results.html" method="post">
+    <h1>Questionnaire</h1><br>
 
-    <h3>Question 2: Which planet is known as the Red Planet?</h3>
-    <label><input type="checkbox" name="q2_option1"> Venus</label><br>
-    <label><input type="checkbox" name="q2_option2"> Mars</label><br>
-    <label><input type="checkbox" name="q2_option3"> Jupiter</label><br>
+    <h3>What brings you to Feminine Fusion?</h3>
+    <label><input type="checkbox" name="q1_option1"> I want to manage PCOS symptoms</label><br>
+    <label><input type="checkbox" name="q1_option2"> I need a place to vent about my PCOS </label><br>
+    <label><input type="checkbox" name="q1_option3"> I can't find a doctor that cares</label><br>
+    <label><input type='checkbox' name='q1_option3'> All of the above</label><br> 
+    <label><input type="checkbox" name="q1_option5"> Other</label>
 
     <!-- Add more questions and options as needed -->
 
@@ -26,5 +89,37 @@
     <input type="submit" value="Submit">
   </form>
 
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quizModalLabel">Quiz Submission</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Thank you for your response. We appreciate your feedback
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to handle form submission
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      $('#quizModal').modal('show'); // Show the modal when form is submitted
+    });
+  </script>
 </body>
 </html>

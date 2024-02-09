@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 500px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4081;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .month {
+            margin-bottom: 20px;
+        }
+        .day {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 2px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .pre-period {
+            background-color: #FFB6C1;
+        }
+        .light-red {
+            background-color: lightcoral;
+        }
+        .red {
+            background-color: red;
+        }
+        .post-period {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Period Tracker</h1>
+        <form id="periodForm">
+            <label for="lastPeriodDate">Date of your last period:</label>
+            <input type="date" id="lastPeriodDate" name="lastPeriodDate">
+            <label for="periodLength">How long did it last? (in days):</label>
+            <input type="number" id="periodLength" name="periodLength">
+            <label for="cycleLength">What's your usual cycle length? (in days):</label>
+            <input type="number" id="cycleLength" name="cycleLength">
+            <button type="button" onclick="trackPeriod()">Track Period</button>
+        </form>
+    </div>
+    <div class="months"></div>
+
+    <script>
+        function trackPeriod() {
+    var lastPeriodDate = new Date(document.getElementById("lastPeriodDate").value);
+    var periodLength = parseInt(document.getElementById("periodLength").value);
+    var cycleLength = parseInt(document.getElementById("cycleLength").value);
+    
+    var monthsContainer = document.querySelector('.months');
+    monthsContainer.innerHTML = '';
+
+    for (var i = 0; i < 1; i++) {
+        var month = new Date(lastPeriodDate);
+        month.setMonth(lastPeriodDate.getMonth() + i);
+        var monthName = month.toLocaleString('default', { month: 'long' });
+        var daysInMonth = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+        
+        var monthElement = document.createElement('div');
+        monthElement.classList.add('month');
+        monthElement.innerHTML = '<h2>' + monthName + '</h2>';
+
+        var daysContainer = document.createElement('div');
+        daysContainer.classList.add('days');
+
+        for (var j = 1; j <= daysInMonth; j++) {
+            var dayElement = document.createElement('div');
+            dayElement.textContent = j;
+            dayElement.classList.add('day');
+
+            var currentDate = new Date(month.getFullYear(), month.getMonth(), j);
+            var daysSinceLastPeriod = Math.floor((currentDate - lastPeriodDate) / (1000 * 60 * 60 * 24));
+
+            if (daysSinceLastPeriod >= 0 && daysSinceLastPeriod < periodLength) {
+                dayElement.classList.add('red'); // period days
+            } else if (daysSinceLastPeriod >= periodLength && daysSinceLastPeriod < cycleLength) {
+                dayElement.classList.add('light'); // post period
+            } else if (daysSinceLastPeriod >= cycleLength - 2 && daysSinceLastPeriod < cycleLength) {
+                dayElement.classList.add('light-red'); // 2 days before period
+            }
+
+            daysContainer.appendChild(dayElement);
+        }
+
+        monthElement.appendChild(daysContainer);
+        monthsContainer.appendChild(monthElement);
+    }
+}
+
+    </script>
+</body>
+</html>

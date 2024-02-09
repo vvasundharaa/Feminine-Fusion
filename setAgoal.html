@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set a Goal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+
+        header {
+            background-color: rgb(248, 154, 213);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .goal-card-container {
+            display: flex;
+            justify-content: space-between;
+            width:800px; /* Increased maximum width */
+            margin: 0 auto; /* Center content horizontally */
+            padding: 20px; /* Add some padding */
+        }
+
+        .tips {
+            display: flex; /* Display tips in a row */
+            flex-wrap: wrap; /* Allow tips to wrap to next row if needed */
+            justify-content: space-between; /* Space evenly between tips */
+            margin-top: 20px; /* Add some space between heading and tips */
+        }
+
+        .tip {
+            width: calc(33.33% - 10px); /* Each tip takes a third of the container width with some margin */
+            margin-bottom: 20px;
+            height:auto;
+            width:200px; /* Add some space between tips */
+            padding: 20px; /* Add padding around each tip */
+            background-color: #fff; /* White background for tips */
+            border-radius: 8px; /* Rounded corners for tips */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+        .tip i {
+            font-size: 46px; /* Icon size */
+            color: #db166f; /* Pink icon color */
+            margin-bottom: 10px; /* Add some space between icon and heading */
+        }
+
+        .tip h2 {
+            font-size: 24px; /* Heading size */
+            color: #333; /* Dark text color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .tip p {
+            font-size: 16px; /* Paragraph size */
+            color: #666; /* Light text color */
+        }
+        a {
+            text-decoration: none;
+        }
+        h2 {
+            color: #db166f;
+            text-align:start;
+        }
+        h3 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Set a Goal</h1>
+    </header>
+    <main>
+        <section id="sample-goals">
+            <h3>Sample Goals</h3>
+            <div class="goal-card-container">
+                <div class="tips">
+                    <a href="goal.html">
+                        <div class="tip">
+                            <i class="fas fa-dumbbell"></i>
+                            <h2>Regular Exercise</h2>
+                            
+                        </div>
+                    </a>
+                </div>
+                <div class="tips">
+                    <a href="goal.html">
+                        <div class="tip">
+                            <i class="fas fa-utensils"></i>
+                            <h2>Healthy Diet</h2>
+                            
+                        </div>
+                    </a>
+                </div>
+                <div class="tips">
+                    <a href="goal.html">
+                        <div class="tip">
+                            <i class="fas fa-spa"></i> <!-- Yoga icon -->
+                            <h2>Yoga Practice</h2>
+                           
+                        </div>
+                        
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

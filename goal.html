@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f7ecec; /* Pink background color */
+            color: #333; /* Dark text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333; /* Dark text color */
+        }
+
+        #calendar {
+            margin-bottom: 30px;
+        }
+
+        .week {
+            display: flex;
+        }
+
+        .day {
+            flex: 1;
+            text-align: center;
+            margin: 5px; /* Adjusted margin */
+        }
+
+        .day input[type="checkbox"] {
+            display: none; /* Hide default checkbox */
+        }
+
+        .day label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /* Circle shape */
+            background-color: #ff8787; /* Pink background color */
+            cursor: pointer;
+        }
+
+        .day.checked label::after {
+            content: '✔'; /* Tick mark symbol using HTML entity */
+            color: #333; /* Dark tick mark color */
+        }
+
+        .fire-icon {
+            color: red;
+            width: 30px;
+            height: 45px;
+            margin-right: 10px;
+
+        }
+
+        #streak {
+             /* Align "Current Streak" text to the left */
+            margin-top: 0;
+            color: red;
+            font-size: 30px; /* Remove default margin */
+        }
+        h2,h3 {
+            color : #fc3f3f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="fire-icon">🔥</span>
+            <span id="streak">0</span>
+        </h1>
+    </header>
+    <main>
+        <section id="calendar">
+            <!-- Calendar section content -->
+            <section id="calendar">
+                
+                <!-- Year -->
+                <h2>Year 2024</h2>
+                <!-- Months -->
+                <!-- Repeat this section for each month -->
+                <div class="month">
+                    <h3>January</h3>
+                    <!-- Weeks -->
+                    <!-- Repeat this section for each week -->
+                    <div class="week">
+                        <h4>Week 1</h4>
+                        <!-- Days -->
+                        <!-- Repeat this section for each day -->
+                        <div class="day">
+                            <input type="checkbox" id="day1">
+                            <label for="day1"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day2">
+                            <label for="day2"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day3">
+                            <label for="day3"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day4">
+                            <label for="day4"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day5">
+                            <label for="day5"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day6">
+                            <label for="day6"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day7">
+                            <label for="day7"></label>
+                        </div>
+                    </div>
+                    <!-- Week 2 -->
+                    <div class="week">
+                        <h4>Week 2</h4>
+                        <!-- Days -->
+                        <!-- Repeat this section for each day -->
+                        <div class="day">
+                            <input type="checkbox" id="day8">
+                            <label for="day8"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day9">
+                            <label for="day9"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day10">
+                            <label for="day10"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day11">
+                            <label for="day11"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day12">
+                            <label for="day12"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day13">
+                            <label for="day13"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day14">
+                            <label for="day14"></label>
+                        </div>
+                        <!-- Add more days here -->
+                    </div>
+                    <!-- Week 3 -->
+                    <div class="week">
+                        <h4>Week 3</h4>
+                        <!-- Days -->
+                        <!-- Repeat this section for each day -->
+                        <div class="day">
+                            <input type="checkbox" id="day15">
+                            <label for="day15"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day16">
+                            <label for="day16"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day17">
+                            <label for="day17"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day18">
+                            <label for="day18"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day19">
+                            <label for="day19"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day20">
+                            <label for="day20"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day21">
+                            <label for="day21"></label>
+                        </div>
+                        <!-- Add more days here -->
+                    </div>
+                    <!-- Week 4 -->
+                    <div class="week">
+                        <h4>Week 4</h4>
+                        <!-- Days -->
+                        <!-- Repeat this section for each day -->
+                        <div class="day">
+                            <input type="checkbox" id="day22">
+                            <label for="day22"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day23">
+                            <label for="day22"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day24">
+                            <label for="day24"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day25">
+                            <label for="day25"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day26">
+                            <label for="day26"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day27">
+                            <label for="day27"></label>
+                        </div>
+                        <div class="day">
+                            <input type="checkbox" id="day28">
+                            <label for="day28"></label>
+                        </div>
+                        <!-- Add more days here -->
+                    </div>
+                </div>
+                <!-- Add more months here -->
+            </section>
+        </body>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    this.parentNode.classList.toggle('checked', this.checked);
+                    updateStreak();
+                });
+            });
+        });
+
+        function updateStreak() {
+            let streakCount = 0;
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    streakCount++;
+                }
+            });
+            document.getElementById('streak').innerText =  + streakCount;
+        }
+    </script>
+</body>
+</html>

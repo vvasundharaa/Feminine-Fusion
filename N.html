@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    
+
+    <!-- Add your CSS link here -->
+    <style>
+        /* styles.css */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f0f5; /* light pink */
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .heading {
+            text-align: center;
+            color: #892a61; /* dark pink */
+        }
+
+        .form {
+            padding: 20px;
+            background-color: #fff; /* white */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333; /* dark gray */
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background-color: #db166f; /* dark pink */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #b71257; /* darker pink */
+        }
+        /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 10px 16px;
+    background-color: #db166f; /* Dark pink */
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 10px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 10px 16px;
+    background-color: #f7f0f5; /* Light pink */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+        .symptom-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .symptom-item {
+            width: 48%; /* Adjust width as needed */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Book an Appointment</h1>
+        <form id="appointmentForm" class="form">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div><br>
+
+            <div class="input-group">
+                <label for="pcosType">PCOS Type:</label>
+                <select id="pcosType" name="pcosType" required>
+                    <option value="type1">Type A</option>
+                    <option value="type2">Type B</option>
+                    <option value="type3">Type C</option>
+                </select>
+            </div><br>
+            
+            <div class="input-group">
+                <label>Symptoms:</label>
+                <div class="symptom-group">
+                    <div class="symptom-item">
+                        <input type="checkbox" id="symptom1" name="symptoms" value="symptom1">
+                        <label for="symptom1">Irregular Periods</label>
+                    </div>
+                    <div class="symptom-item">
+                        <input type="checkbox" id="symptom2" name="symptoms" value="symptom2">
+                        <label for="symptom2">Infertility</label>
+                    </div>
+                </div>
+                <div class="symptom-group">
+                    <div class="symptom-item">
+                        <input type="checkbox" id="symptom3" name="symptoms" value="symptom3">
+                        <label for="symptom3">Excess Hair Growth</label>
+                    </div>
+                    <div class="symptom-item">
+                        <input type="checkbox" id="symptom4" name="symptoms" value="symptom4">
+                        <label for="symptom4">Acne</label>
+                    </div>
+                </div>
+            
+
+
+            <div class="form-group">
+                <label for="appointmentDate">Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+            </div>
+            <div class="form-group">
+                <label for="appointmentTime">Time:</label>
+                <input type="time" id="appointmentTime" name="appointmentTime" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="doctor">Doctor:</label>
+                <select id="doctor" name="doctor">
+                    <option value="drSmith">Dr. Smith</option>
+                    <option value="drJones">Dr. Jones</option>
+                    <option value="drSmith">Dr. jones</option>
+                    <option value="drJones">Dr. Jones</option>
+                    
+                </select>
+            </div>
+            
+            <input type="submit" value="Book Appointment" class="btn-submit">
+        </form>
+    </div>
+
+    
+    <!-- Bootstrap Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document"> <!-- Add 'modal-dialog-centered' class -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Appointment Booked</h5>
+                
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Your JavaScript code -->
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting normally
+
+            // Show the modal when form is submitted
+            $('#appointmentModal').modal('show');
+        });
+    </script>
+
+</body>
+</html>
