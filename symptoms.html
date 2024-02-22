@@ -3,119 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCOS Symptom Selector</title>
+    <title>PCOS Symptoms Tracker</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #faeff0; /* Light pink background */
-    color: #4a4a4a; /* Dark gray text */
-}
-
-h1 {
-    text-align: center;
-    color: #ff69b4; /* Hot pink header */
-}
-
-form {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #ffffff; /* White form background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
-}
-
-h2 {
-    color: #ff69b4; /* Hot pink heading */
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-    margin-right: 10px;
-}
-
-button[type="submit"] {
-    background-color: #ff69b4; /* Hot pink button */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #ff1493; /* Darker pink on hover */
-}
-
-#output-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff; /* White container background */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
-}
-
-#output {
-    margin-bottom: 20px;
-}
-
-
-
+ body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Ensure content is centered vertically */
+        }
+        .container {
+            justify-content:center;
+            align-items:center;
+            margin-top: 10px;
+            margin-left:40px; /* Add margin for spacing */
+        }
+        #controls-container {
+            margin-left: 20px; /* Add margin between symptoms and controls */
+        }
+        /* Style the button */
+        #show-types-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #a10073;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #show-types-btn:hover {
+            background-color: #f4b2e1;
+        }
+        /* Add styling when button is clicked */
+        #show-types-btn.clicked {
+            background-color: #f44336;
+        }
+        .symptom {
+            display: inline-block;
+            width:18%;
+            padding:5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .symptom label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .symptom img {
+            width: 100%;
+            max-width: 120px;
+            display: block;
+            margin: 0 auto 5px;
+        }
+        .symptom input[type="checkbox"] {
+            width: 15px;
+            height: 18px;
+        }
+        .clicked img {
+            border: 2px solid #F4CCCC;
+        }
+        h1 {
+            color:#f70db4;
+            font-size: 36px;
+        }
+        .result {
+            background-color: #f8d4ee;
+            font: 20px;
+            font-weight: bold;
+            color: #a10073;
+            border-radius: 10px;
+            text-align: center;
+            padding:10px;
+        }
+        .btn-1 {
+            background-color: #ffd2f5;
+            color: #ae057b;
+            font-weight: bold;
+            border-color: transparent;
+            border-radius: 10px;
+            padding: 7px;
+        }
+        p {
+            background-color: rgb(249, 240, 240);
+            color:rgb(255, 0, 0);
+            padding: 8px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <h1>PCOS Symptom Selector</h1>
-    <form id="symptomsForm">
-        <div class="question-container">
-            <div class="question">
-                <h2>Select the PCOS symptoms that you live with.</h2>
-                <label><input type="checkbox" id="Irregular_periods" name="symptom" value="Irregular_periods"> Irregular Periods</label>
-                <label><input type="checkbox" id="Infertility" name="symptom" value="Infertility"> Infertility</label>
-                <label><input type="checkbox" id="Skin_Problems" name="symptom" value="Skin_Problems"> Skin Problems: Acne, Oily Skin</label>
-                <label><input type="checkbox" id="Excessive_Hair_Growth" name="symptom" value="Excessive_Hair_Growth"> Excessive Hair Growth</label>
-                <label><input type="checkbox" id="Depression_Anxiety" name="symptom" value="Depression_Anxiety"> Depression, Anxiety, etc.</label>
-                <label><input type="checkbox" id="None_of_Above" name="symptom" value="None_of_Above"> None of the Above</label>
-                <label><input type="checkbox" id="Other" name="symptom" value="Other"> Other</label>
-            </div>
-            <div class="question">
-                <h2>The PCOS experience is not an easy one. It takes a major toll on our mental health. Pick the responses that are the most relevant to you.</h2>
-                <label><input type="checkbox" id="Depression" name="mental_health" value="Depression"> Depression</label>
-                <label><input type="checkbox" id="Anxiety" name="mental_health" value="Anxiety"> Anxiety</label>
-                <label><input type="checkbox" id="Lonliness" name="mental_health" value="Lonliness"> Loneliness</label>
-                <label><input type="checkbox" id="Shame" name="mental_health" value="Shame"> Shame</label>
-                <label><input type="checkbox" id="Low_Self_Esteem" name="mental_health" value="Low_Self_Esteem"> Low Self-Esteem</label>
-                <label><input type="checkbox" id="Negative_Self_Talk" name="mental_health" value="Negative_Self_Talk"> Negative Self-Talk</label>
-                <label><input type="checkbox" id="Sleep_Deprivation" name="mental_health" value="Sleep_Deprivation"> Sleep Deprivation</label>
-                <label><input type="checkbox" id="None_of_Above_Mental_Health" name="mental_health" value="None_of_Above"> None of the Above</label>
-                <label><input type="checkbox" id="Other_Mental_Health" name="mental_health" value="Other"> Other</label>
-            </div>
-            <div class="question">
-                <h2>Agree or Disagree: I find it rather difficult to manage my PCOS symptoms, no matter what I try.</h2>
-                <label><input type="radio" name="difficulty_management" value="Strongly_Agree"> Strongly Agree</label>
-                <label><input type="radio" name="difficulty_management" value="Somewhat_Agree"> Somewhat Agree</label>
-                <label><input type="radio" name="difficulty_management" value="Agree"> Agree</label>
-                <label><input type="radio" name="difficulty_management" value="Neutral"> Neutral</label>
-                <label><input type="radio" name="difficulty_management" value="Disagree"> Disagree</label>
-                <label><input type="radio" name="difficulty_management" value="Somewhat_Disagree"> Somewhat Disagree</label>
-                <label><input type="radio" name="difficulty_management" value="Strongly_Disagree"> Strongly Disagree</label>
-            </div>
+    <h1>PCOS Symptoms Tracker</h1>
+    <div id="symptoms-container" class="container">
+        <div class="symptom" id="irregular_periods">
+            <label for="chk_irregular_periods">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\7.jpg" alt="Irregular Periods">
+            </label>
+            <input type="checkbox" id="chk_irregular_periods">
+            <label for="chk_irregular_periods">Irregular Periods</label>
         </div>
-        
-        <button type="submit">Submit</button>
-    </form>
-
-    <div id="output-container">
-        <div id="output"></div>
-        <div id="infographic"></div>
+        <div class="symptom" id="unwanted_hair_growth">
+            <label for="chk_unwanted_hair_growth">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\1.jpg" alt="Unwanted Hair Growth">
+            </label>
+            <input type="checkbox" id="chk_unwanted_hair_growth">
+            <label for="chk_unwanted_hair_growth">Unwanted Hair Growth</label>
+        </div>
+        <div class="symptom" id="acne">
+            <label for="chk_acne">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\4.jpg" alt="Acne">
+            </label>
+            <input type="checkbox" id="chk_acne">
+            <label for="chk_acne">Acne</label>
+        </div>
+        <div class="symptom" id="weight_gain">
+            <label for="chk_weight_gain">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\6.jpg" alt="Weight Gain">
+            </label>
+            <input type="checkbox" id="chk_weight_gain">
+            <label for="chk_weight_gain">Weight Gain</label>
+        </div>
+        <div class="symptom" id="hairfall">
+            <label for="chk_hairfall">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\5.jpg" alt="Hairfall">
+            </label>
+            <input type="checkbox" id="chk_hairfall">
+            <label for="chk_hairfall">Hairfall</label>
+        </div>
+        <div class="symptom" id="insulin_resistance">
+            <label for="chk_insulin_resistance">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\8.jpg" alt="Insulin Resistance">
+            </label>
+            <input type="checkbox" id="chk_insulin_resistance">
+            <label for="chk_insulin_resistance">Insulin Resistance</label>
+        </div>
+        <div class="symptom" id="high_testosterone_levels">
+            <label for="chk_high_testosterone_levels">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\3.jpg" alt="High Testosterone Levels">
+            </label>
+            <input type="checkbox" id="chk_high_testosterone_levels">
+            <label for="chk_high_testosterone_levels">High Testosterone Levels</label>
+        </div>
+        <div class="symptom" id="infertility">
+            <label for="chk_infertility">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\2.jpg" alt="Infertility">
+            </label>
+            <input type="checkbox" id="chk_infertility">
+            <label for="chk_infertility">Infertility</label>
+        </div>
+        <div class="symptom" id="fatigue">
+            <label for="chk_fatigue">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\9.jpg" alt="fatigue">
+            </label>
+            <input type="checkbox" id="chk_fatigue">
+            <label for="chk_fatigue">Fatigue</label>
+        </div>
+        <div class="symptom" id="mood-changes">
+            <label for="chk_mood-changes">
+                <img src="D:\Freelance\PCOS WEBSITE\Feminine-Fusion\images\10.jpg" alt="fatigue">
+            </label>
+            <input type="checkbox" id="chk_mood-changes">
+            <label for="chk_mood-changes">Mood Changes</label>
+        </div>
     </div>
+    <div>
+        <div>
+        <button id="show-types-btn" >Show PCOS Types</button>
+        </div> <br>
+        <div id="pcos-types-container" class="result" style="display: none;"></div>
+        <p id="consult-doctor-msg" style="display: none;">Selected symptoms suggest above potential PCOS types. Consult a doctor for accurate diagnosis.</p>
+        <button id="book-appointment-btn" class="btn-1" style="display: none;">Book Appointment Now</button>
+        
+         </div>
+   <br><br><br><br><br><br>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const symptomMapping = {
+        'irregular_periods': ['Insulin-Resistant PCOS', 'Inflammatory PCOS'],
+        'unwanted_hair_growth': ['Insulin-Resistant PCOS', 'Adrenal PCOS'],
+        'acne': ['Insulin-Resistant PCOS', 'Adrenal PCOS', 'Inflammatory PCOS', 'Post-Pill PCOS'],
+        'weight_gain': ['Insulin-Resistant PCOS', 'Inflammatory PCOS'],
+        'stress_related_triggers': ['Adrenal PCOS'],
+        'hormonal_imbalances': ['Post-Pill PCOS'],
+        'fatigue': ['Adrenal PCOS'],
+        'hairfall': ['Adrenal PCOS', 'Inflammatory PCOS'], // Add hairfall symptom mapping
+        'insulin_resistance': ['Insulin-Resistant PCOS'], // Add insulin resistance symptom mapping
+        'high_testosterone_levels': ['Adrenal PCOS'],
+        'infertility': ['Post-Pill PCOS'],
+        'mood-changes': ['Inflammatory PCOS'] // Add high testosterone levels symptom mapping
+        // Add more symptom mappings as needed
+    };
 
-    <script src="appointment.js"></script>
+
+    const symptoms = document.querySelectorAll('.symptom input[type="checkbox"]');
+            const showTypesButton = document.getElementById('show-types-btn');
+            const pcosTypesContainer = document.getElementById('pcos-types-container');
+
+            symptoms.forEach(symptom => {
+                symptom.addEventListener('change', function(event) {
+                    const associatedSymptom = this.parentNode.id;
+                    const symptomImg = this.parentNode.querySelector('img');
+                    if (this.checked) {
+                        symptomImg.classList.add('clicked');
+                    } else {
+                        symptomImg.classList.remove('clicked');
+                    }
+                });
+            });
+
+            showTypesButton.addEventListener('click', function() {
+                const selectedSymptoms = document.querySelectorAll('.symptom input[type="checkbox"]:checked');
+                const associatedTypes = new Set(); // Use a Set to prevent duplicates
+                selectedSymptoms.forEach(symptom => {
+                    const symptomTypes = symptomMapping[symptom.parentNode.id];
+                    symptomTypes.forEach(type => associatedTypes.add(type));
+                });
+                displayAssociatedTypes(Array.from(associatedTypes)); // Convert Set back to an array
+                
+                // Show the result container, message, and book appointment button
+                document.getElementById('pcos-types-container').style.display = 'block';
+                document.getElementById('consult-doctor-msg').style.display = 'block';
+                document.getElementById('book-appointment-btn').style.display = 'block';
+            });
+
+            function displayAssociatedTypes(types) {
+                pcosTypesContainer.innerHTML = '';
+                types.forEach(type => {
+                    const typeElement = document.createElement('div');
+                    typeElement.textContent = type;
+                    pcosTypesContainer.appendChild(typeElement);
+                });
+            }
+        });
+        document.getElementById('book-appointment-btn').addEventListener('click', function() {
+            window.location.href = 'N.html';
+        });
+            
+
+    </script>
 </body>
 </html>
