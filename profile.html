@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        /* Style for form fields */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        /* Style for buttons */
+        button {
+            background-color: #FF69B4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #FF1493;
+        }
+        
+        /* Style for section titles */
+        .section-title {
+            margin-top: 30px;
+            color: #FF69B4;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Manage Profile</h2>
+    
+    <!-- Profile Information Section -->
+    <div class="profile-section">
+        <h3 class="section-title">Profile Information</h3>
+        <input type="text" name="username" placeholder="Enter Name" required>
+
+        <!-- Add more fields as needed -->
+    </div>
+    
+    <!-- Medical History Section -->
+    <div class="medical-history-section">
+        <h3 class="section-title">Medical History</h3>
+        <textarea name="medical-history" placeholder="Enter your medical history..." rows="5"></textarea>
+    </div>
+    
+    <!-- Symptom Tracker Section -->
+    <div class="symptom-tracker-section">
+        <a href="symptoms.html">
+        <h3 class="section-title">Symptom Tracker</h3>
+        </a>
+        <!-- Add symptom tracking fields here -->
+    </div>
+    
+    <!-- Other sections can be added similarly -->
+    
+    <!-- Save Changes Button -->
+    <button type="submit">Save Changes</button>
+</div>
+
+</body>
+</html>
