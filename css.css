@@ -365,5 +365,22 @@ button {
 .close-btn:hover {
     color: #999;
 }
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 100%; /* Set the width to 100% for smaller screens */
+    margin: 5px 0; /* Adjust margin for spacing between cards */
+  }
+
+  .card img {
+    width: 100%; /* Set the image width to 100% for smaller screens */
+    border-radius: 10px 10px 0 0; /* Adjust border radius */
+  }
+
+  .card-content {
+    width: 100%; /* Set the content width to 100% for smaller screens */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
 
 
