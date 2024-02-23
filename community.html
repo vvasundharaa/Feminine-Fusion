@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOD Community Forum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .profile-container {
+            flex: 1;
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+
+        .discussion-container {
+            flex: 2;
+            padding-left: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .post {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .post h3 {
+            margin-top: 0;
+            color: #FF69B4;
+        }
+        
+        .post p {
+            color: #666;
+        }
+        
+        .btn {
+            background-color: #FF69B4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #FF1493;
+        }
+
+        /* User Profile Styling */
+        .user-profile {
+            margin-bottom: 20px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-details {
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fde9f1;
+            width:100%;
+            padding-left:10px;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+
+        .user-bio {
+            color: #888;
+        }
+
+        /* Category Styling */
+        .category {
+            margin-bottom: 10px;
+        }
+
+        .category-label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        /* Comment Section Styling */
+        .comments {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .comment-content {
+            color: #666;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #333;
+        }
+        .suggested-profiles {
+        display: flex; /* Use flexbox */
+        justify-content: space-around; /* Distribute items evenly along the main axis */
+        align-items: center; /* Align items vertically */
+        }
+        .profile-card {
+        flex: 1; /* Distribute available space equally among profile cards */
+        margin: 0 10px; /* Add margin between profile cards */
+    }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <div class="user-profile">
+            <div class="user-details">
+            <img src="https://thumbs.dreamstime.com/b/%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C-woman-avatar-profile-female-face-icon-vector-illustration-226594813.jpg" alt="User Avatar" class="user-avatar">
+            
+                <div class="user-name">Supriya</div>
+                <div class="user-info">
+                    <p><strong>Location:</strong>Hyderabad</p>
+                    <p><strong>Interests:</strong> Nutrition, Fitness, Wellness</p>
+                    <p><strong>Social Media:</strong> 
+                        <a> <i class="fab fa-facebook-square fa-lg"></i></a> 
+                        <a><i class="fab fa-twitter-square fa-lg"></i></a> 
+                        <a><i class="fab fa-instagram-square fa-lg"></i></a> 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h1>Recommended PCOS Professionals</h1>
+        <div class="suggested-profiles">
+            <!-- Profile Card 1 -->
+            <div class="profile-card">
+                <img class="user-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4jWeXcV1U--PcrNLb3rUDyT-612kt_ePfnW3TVRmga0Pqpba042DBivoL_cKmJ7PD50Q&usqp=CAU" alt="Coach Avatar" class="profile-avatar">
+                <div class="profile-name">Padma</div>
+                <div class="profile-type">Health Coach</div>
+            </div>
+    
+            <!-- Profile Card 2 -->
+            <div class="profile-card">
+                <img  class='user-avatar'src="https://cdn-icons-png.flaticon.com/512/6833/6833605.png" alt="Doctor Avatar" class="profile-avatar">
+                <div class="profile-name">Sindhu</div>
+                <div class="profile-type">Personal Trainer</div>
+            </div>
+    
+            <!-- Add more profile cards as needed -->
+        </div> 
+            <br><br><br>
+        <div class="suggested-profiles">
+            <!-- Profile Card 1 -->
+            <div class="profile-card">
+                <img class="user-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4jWeXcV1U--PcrNLb3rUDyT-612kt_ePfnW3TVRmga0Pqpba042DBivoL_cKmJ7PD50Q&usqp=CAU" alt="Coach Avatar" class="profile-avatar">
+                <div class="profile-name">Dr.Sravani</div>
+                <div class="profile-type">Psychologist</div>
+            </div>
+    
+            <!-- Profile Card 2 -->
+            <div class="profile-card">
+                <img  class='user-avatar'src="https://cdn-icons-png.flaticon.com/512/6833/6833605.png" alt="Doctor Avatar" class="profile-avatar">
+                <div class="profile-name">Dr.Vanaja</div>
+                <div class="profile-type">Nutritionist</div>
+            </div>
+    
+            <!-- Add more profile cards as needed -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>    
+    <div class="discussion-container">
+        <h2>PCOD Community Forum</h2>
+        
+        <!-- Sample Discussion Threads -->
+        <div class="post">
+            
+            <h3>Managing PCOD Symptoms</h3>
+            <p>What are some effective strategies for managing PCOD symptoms like acne and irregular periods?</p>
+            <a href="#" class="btn">Join Discussion</a>
+            <!-- Comment Section -->
+            <div class="comments">
+                <div class="comment">
+                    <div class="comment-author">Pallavi</div>
+                    <div class="comment-content">I find that regular exercise and a balanced diet help a lot!</div>
+                </div>
+                <!-- Add more comments as needed -->
+            </div>
+        </div>
+        
+        
+        <div class="post">
+            <h3>Healthy Diet Tips</h3>
+            <p>Share your favorite PCOD-friendly recipes and diet tips for managing weight and hormone levels.</p>
+            <a href="#" class="btn">Join Discussion</a>
+        </div>
+        
+        <div class="post">
+            <h3>Emotional Support Group</h3>
+            <p>Join our support group to connect with others facing similar challenges and share your experiences.</p>
+            <a href="#" class="btn">Join Discussion</a>
+        </div>
+        
+        <!-- Add more discussion threads as needed -->
+    </div>
+</div>
+
+</body>
+</html>
