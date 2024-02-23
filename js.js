@@ -15,3 +15,18 @@ $(document).ready(function() {
         } 
     });
 });    
+// Function to open the video popup
+ function openVideoPopup() {
+    document.getElementById("video-popup").style.display = "block";
+}
+
+// Function to close the video popup
+function closeVideoPopup() {
+    document.getElementById("video-popup").style.display = "none";
+}
+
+// Call the function to display the video popup when the page loads
+window.onload = function() {
+    openVideoPopup();
+};
+
