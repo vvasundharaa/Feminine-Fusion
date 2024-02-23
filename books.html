@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: rgb(250, 244, 245);
+        }
+        .book-collection {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1000px; /* Set maximum width for the container */
+            margin: 0 auto; /* Center the container */
+            overflow-x: auto; /* Enable horizontal scrolling */
+        }
+
+        .book {
+            width: calc(30% - 20px); /* Adjusted width with margin */
+            margin-right: 20px; /* Added margin between books */
+            background-color: #fff;
+            border-radius: 5px;
+            color:rgb(248, 11, 169);
+            box-shadow: 0 0 10px rgba(222, 94, 152, 0.2);
+            text-align: center;
+            overflow: hidden; /* Ensure images don't overflow */
+        }
+
+        .book:last-child {
+            margin-right: 0; /* Remove margin from the last book */
+        }
+
+        .book img {
+            width: 100%; /* Make images fill the entire space */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+        }
+
+        h1 {
+            color:#d40e92;
+            text-align: center;
+            font-size: 40px;
+        }
+        p {
+            font-weight: bold;
+            color:#d40e92;
+        }
+
+        a {
+            text-decoration: none; /* Remove underline */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Journey Through Knowledge: Explore Our Bookshelf</h1>
+    </header>
+    <main>
+        <section class="book-collection">
+            <div class="book">
+                <a href="https://www.kobo.com/in/en/ebook/pcos-a-step-by-step-guide-to-reverse-polycystic-ovary-syndrome-balance-your-hormones-boost-your-metabolism-restore-your-fertility">
+                    <img src="https://cdn.kobo.com/book-images/e4252e46-9a2b-4567-8cea-1cec788e4d08/1200/1200/False/pcos-a-step-by-step-guide-to-reverse-polycystic-ovary-syndrome-balance-your-hormones-boost-your-metabolism-restore-your-fertility.jpg" alt="Book 3">
+                    <p>Discover more about this book</p>    
+                </a>
+            </div>
+            <div class="book">
+                <a href="https://himveda.com/ayurvedic-treatment-pcod/">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJqJqYSKjL0gm-pvgZDfrTIUwmy9xeTThdcA&usqp=CAU" alt="Book 3">
+                    <p>Discover more about this book</p>
+                </a>
+            </div>
+            <div class="book">
+                <a href="https://rohinibajekal.com/">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr4H91cNGeRJ3iggInbqmMO-mdNI1eqxw8jA&usqp=CAU" alt="Book 3">
+                    <p>Discover more about this book</p>
+                </a>
+            </div>
+            
+            <!-- Add more books as needed -->
+        </section>
+    </main>
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+</body>
+</html>
