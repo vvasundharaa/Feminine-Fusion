@@ -91,11 +91,32 @@
             padding: 8px;
             font-weight: bold;
         } 
-         @media screen and (max-width: 600px) {
-            .symptom {
-                flex: 0 0 100%;
-            }
-         }
+        @media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px auto; /* Adjust margin for spacing */
+  }
+  
+  .symptom {
+    width: 45%; /* Adjust width to fit two symptoms per row */
+    margin: 5px; /* Add margin for spacing between symptoms */
+  }
+
+  .symptom img {
+    max-width: 100px; /* Adjust image size for smaller screens */
+  }
+
+  #controls-container {
+    margin: 20px 0; /* Adjust margin for spacing */
+  }
+
+  h1 {
+    font-size: 24px; /* Adjust font size for smaller screens */
+  }
+}
+
     </style>
 </head>
 <body>
