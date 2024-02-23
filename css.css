@@ -365,22 +365,66 @@ button {
 .close-btn:hover {
     color: #999;
 }
-@media only screen and (max-width: 600px) {
-  .card {
-    width: 100%; /* Set the width to 100% for smaller screens */
-    margin: 5px 0; /* Adjust margin for spacing between cards */
-  }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .card img {
-    width: 100%; /* Set the image width to 100% for smaller screens */
-    border-radius: 10px 10px 0 0; /* Adjust border radius */
-  }
+    .navbar a {
+        margin: 5px 0;
+    }
 
-  .card-content {
-    width: 100%; /* Set the content width to 100% for smaller screens */
-    padding: 10px; /* Adjust padding */
-  }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px 10px 0 0; /* Adjust border radius */
+    }
+
+    .card-content {
+        width: 100%;
+    }
+
+    .carousel-item img {
+        height: auto; /* Adjust image height */
+    }
+
+    .carousel-container {
+        display: none; /* Hide the carousel on small screens */
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .headline {
+        font-size: 30px;
+    }
+
+    .button-1 {
+        padding: 8px 16px;
+        margin-top: 10px;
+    }
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Adjust width as needed */
+        margin-bottom: 20px; /* Add space between cards */
+    }
+}
 
 
