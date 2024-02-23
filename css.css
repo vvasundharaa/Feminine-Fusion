@@ -339,3 +339,31 @@ button {
     padding: 20px;
     text-align: center;
 }
+/* CSS for the video popup */
+.video-popup {
+    display: none;
+    position: fixed;
+    bottom: 140px; /* Adjust distance from bottom as needed */
+    left:91%;/* Center horizontally */
+    transform: translateX(-50%);
+    background-color: transparent;
+    z-index: 9999;
+}
+
+.video-popup-content {
+    padding:2px;
+}
+
+.close-btn {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #999;
+}
+
+
