@@ -29,4 +29,8 @@ function closeVideoPopup() {
 window.onload = function() {
     openVideoPopup();
 };
+document.getElementById('premium-btn').addEventListener('click', function() {
+    // Redirect to the payment page for premium services
+    window.location.href = 'payment.html'; // Replace 'payment.html' with the actual URL of your payment page
+});
 
